@@ -5,3 +5,10 @@
 /config/dev.toml
 /config/prod.toml
 /config/local.toml
+
+# Editor directories and files
+.vscode
+.idea
+.DS_Store
+.cursorrules
+.cursor
