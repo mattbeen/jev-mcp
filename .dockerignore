@@ -1,0 +1,6 @@
+target/
+.git/
+.env
+config/dev.toml
+config/prod.toml
+config/local.toml

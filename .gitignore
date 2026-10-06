@@ -1,0 +1,7 @@
+/target
+.env
+
+# Environment-specific config (may contain API keys)
+/config/dev.toml
+/config/prod.toml
+/config/local.toml

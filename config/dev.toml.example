@@ -1,0 +1,10 @@
+# Local overrides for APP_ENV=dev (default when APP_ENV is unset).
+# Copy this file to config/dev.toml and fill in your credentials.
+# config/dev.toml is gitignored.
+#
+# Docker: use .env with TYPESAFE_API_KEY (see .env.example) or mount this file as
+# /app/config/dev.toml and set APP_ENV=dev in compose.
+
+typesafe_api_url = "https://api.typesafe.ai/v1/systemone"
+typesafe_api_key = "YOUR_TYPESAFE_API_KEY"
+model = "jev-latest"

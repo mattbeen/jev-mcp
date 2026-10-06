@@ -1,0 +1,34 @@
+# Jev MCP (streamable HTTP). MCP endpoint:
+#   http://localhost:8766/mcp/jev/v1
+#
+# Setup:
+#   cp .env.example .env   # set TYPESAFE_API_KEY
+#   docker compose up --build
+#
+# Optional: use a local config file instead of .env for the API key:
+#   APP_ENV=dev and mount ./config/dev.toml -> /app/config/dev.toml
+
+services:
+  jev-mcp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "${HOST_PORT:-8766}:8766"
+    environment:
+      APP_ENV: ${APP_ENV:-docker}
+      APP_TYPESAFE_API_KEY: ${TYPESAFE_API_KEY:?Set TYPESAFE_API_KEY in .env}
+    env_file:
+      - path: .env
+        required: false
+    restart: unless-stopped
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "wget -q --spider http://127.0.0.1:8766/mcp/jev/v1/ || exit 1",
+        ]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s

@@ -1,0 +1,7 @@
+service_host = "0.0.0.0"
+service_port = 8766
+app_prefix = "/mcp/jev/v1"
+request_timeout = 30
+log_level = "info"
+# "stdio" | "http"
+transport_mode = "http"

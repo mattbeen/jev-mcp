@@ -1,0 +1,6 @@
+# Non-secret overrides when APP_ENV=docker (default in the container image).
+# Set APP_TYPESAFE_API_KEY (or TYPESAFE_API_KEY via compose) for the API key.
+
+typesafe_api_url = "https://api.typesafe.ai/v1/systemone"
+model = "jev-latest"
+transport_mode = "http"
